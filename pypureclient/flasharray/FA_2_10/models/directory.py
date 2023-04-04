@@ -37,7 +37,7 @@ class Directory(object):
         'directory_name': 'str',
         'file_system': 'FixedReference',
         'path': 'str',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'time_remaining': 'int',
         'limited_by': 'LimitedBy'
     }
@@ -67,7 +67,7 @@ class Directory(object):
         directory_name=None,  # type: str
         file_system=None,  # type: models.FixedReference
         path=None,  # type: str
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         time_remaining=None,  # type: int
         limited_by=None,  # type: models.LimitedBy
     ):
@@ -80,7 +80,7 @@ class Directory(object):
             directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field.
             file_system (FixedReference): The file system that this managed directory is in.
             path (str): Absolute path of the managed directory in the file system.
-            space (Space): Displays size and space consumption information.
+            space (SpaceBase): Displays size and space consumption information.
             time_remaining (int): The amount of time left, measured in milliseconds until the destroyed managed directory is permanently eradicated.
             limited_by (LimitedBy): The quota policy that is limiting usage on this managed directory. This policy defines the total amount of space provisioned to this managed directory and its descendants. The returned value contains two parts&#58; the name of the policy and the managed directory to which the policy is attached.
         """

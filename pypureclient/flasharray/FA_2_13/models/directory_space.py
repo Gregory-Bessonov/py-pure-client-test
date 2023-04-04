@@ -32,7 +32,7 @@ class DirectorySpace(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'time': 'int'
     }
 
@@ -50,14 +50,14 @@ class DirectorySpace(object):
         self,
         id=None,  # type: str
         name=None,  # type: str
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         time=None,  # type: int
     ):
         """
         Keyword args:
             id (str): A globally unique, system-generated ID. The ID cannot be modified and cannot refer to another resource.
             name (str): A locally unique, system-generated name. The name cannot be modified.
-            space (Space): Displays size and space consumption information.
+            space (SpaceBase): Displays size and space consumption information.
             time (int): The timestamp of when the data was taken. Measured in milliseconds since the UNIX epoch.
         """
         if id is not None:

@@ -35,7 +35,7 @@ class VolumeGroupPatch(object):
         'destroyed': 'bool',
         'qos': 'Qos',
         'priority_adjustment': 'PriorityAdjustment',
-        'space': 'Space'
+        'space': 'SpaceBase'
     }
 
     attribute_map = {
@@ -57,7 +57,7 @@ class VolumeGroupPatch(object):
         destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
         priority_adjustment=None,  # type: models.PriorityAdjustment
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
     ):
         """
         Keyword args:
@@ -66,7 +66,7 @@ class VolumeGroupPatch(object):
             destroyed (bool): Displays a value of `true` if the volume group has been destroyed and is pending eradication. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. After the `time_remaining` period has elapsed, the volume group is permanently eradicated and cannot be recovered.
             qos (Qos)
             priority_adjustment (PriorityAdjustment)
-            space (Space)
+            space (SpaceBase)
         """
         if id is not None:
             self.id = id

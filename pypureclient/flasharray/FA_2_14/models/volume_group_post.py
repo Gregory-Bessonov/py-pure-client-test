@@ -35,7 +35,7 @@ class VolumeGroupPost(object):
         'destroyed': 'bool',
         'qos': 'Qos',
         'priority_adjustment': 'PriorityAdjustment',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'time_remaining': 'int',
         'volume_count': 'int'
     }
@@ -61,7 +61,7 @@ class VolumeGroupPost(object):
         destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
         priority_adjustment=None,  # type: models.PriorityAdjustment
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         time_remaining=None,  # type: int
         volume_count=None,  # type: int
     ):
@@ -72,7 +72,7 @@ class VolumeGroupPost(object):
             destroyed (bool): Destroy or recover a volume group. To destroy a volume group, patch to `true`. To recover a destroyed volume group, patch to `false`. If not specified, defaults to `false`.
             qos (Qos)
             priority_adjustment (PriorityAdjustment)
-            space (Space)
+            space (SpaceBase)
             time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated, measured in milliseconds.
             volume_count (int): The number of volumes in the volume group.
         """

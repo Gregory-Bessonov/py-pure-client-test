@@ -37,7 +37,7 @@ class Offload(object):
         'name': 'str',
         'protocol': 'str',
         'target_id': 'str',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'status': 'str'
     }
 
@@ -65,7 +65,7 @@ class Offload(object):
         name=None,  # type: str
         protocol=None,  # type: str
         target_id=None,  # type: str
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         status=None,  # type: str
     ):
         """
@@ -77,7 +77,7 @@ class Offload(object):
             name (str): A user-specified name. The name must be locally unique and can be changed.
             protocol (str): Type of offload. Valid values include `azure`, `google-cloud`, `nfs`, and `s3`.
             target_id (str): Unique ID for the offload target. When multiple connections to one offload target are created, they each have distinct IDs but share the same `target_id`.
-            space (Space)
+            space (SpaceBase)
             status (str): Offload status. Valid values are `connecting`, `connected`, `disconnecting`, `not connected`, and `scanning`.
         """
         if azure is not None:

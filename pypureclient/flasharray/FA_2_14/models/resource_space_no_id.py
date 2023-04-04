@@ -31,7 +31,7 @@ class ResourceSpaceNoId(object):
     """
     swagger_types = {
         'name': 'str',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'time': 'int'
     }
 
@@ -47,13 +47,13 @@ class ResourceSpaceNoId(object):
     def __init__(
         self,
         name=None,  # type: str
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         time=None,  # type: int
     ):
         """
         Keyword args:
             name (str): A locally unique, system-generated name. The name cannot be modified.
-            space (Space): Displays size and space consumption information.
+            space (SpaceBase): Displays size and space consumption information.
             time (int)
         """
         if name is not None:

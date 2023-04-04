@@ -37,7 +37,7 @@ class Directory(object):
         'directory_name': 'str',
         'file_system': 'FixedReference',
         'path': 'str',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'time_remaining': 'int'
     }
 
@@ -65,7 +65,7 @@ class Directory(object):
         directory_name=None,  # type: str
         file_system=None,  # type: models.FixedReference
         path=None,  # type: str
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         time_remaining=None,  # type: int
     ):
         """
@@ -77,7 +77,7 @@ class Directory(object):
             directory_name (str): The managed directory name without the file system name prefix. A full managed directory name is constructed in the form of `FILE_SYSTEM:DIR` where `FILE_SYSTEM` is the file system name and `DIR` is the value of this field.
             file_system (FixedReference): The file system that this managed directory is in.
             path (str): Absolute path of the managed directory in the file system.
-            space (Space): Displays size and space consumption information.
+            space (SpaceBase): Displays size and space consumption information.
             time_remaining (int): The amount of time left, measured in milliseconds until the destroyed managed directory is permanently eradicated.
         """
         if id is not None:

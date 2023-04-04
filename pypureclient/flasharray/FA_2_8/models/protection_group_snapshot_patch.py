@@ -35,7 +35,7 @@ class ProtectionGroupSnapshotPatch(object):
         'destroyed': 'bool',
         'pod': 'FixedReference',
         'source': 'FixedReference',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'suffix': 'str',
         'time_remaining': 'int'
     }
@@ -61,7 +61,7 @@ class ProtectionGroupSnapshotPatch(object):
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
         source=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         suffix=None,  # type: str
         time_remaining=None,  # type: int
     ):
@@ -72,7 +72,7 @@ class ProtectionGroupSnapshotPatch(object):
             destroyed (bool): Returns a value of `true` if the protection group snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the snapshot is permanently eradicated and can no longer be recovered.
             pod (FixedReference): The pod in which the protection group of the protection group snapshot resides.
             source (FixedReference): The original protection group from which this snapshot was taken.
-            space (Space): Returns provisioned size and physical storage consumption data for each protection group.
+            space (SpaceBase): Returns provisioned size and physical storage consumption data for each protection group.
             suffix (str)
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
         """

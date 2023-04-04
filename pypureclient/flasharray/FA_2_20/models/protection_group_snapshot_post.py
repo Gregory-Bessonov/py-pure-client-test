@@ -36,7 +36,7 @@ class ProtectionGroupSnapshotPost(object):
         'destroyed': 'bool',
         'pod': 'FixedReference',
         'source': 'FixedReference',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'suffix': 'str',
         'time_remaining': 'int',
         'eradication_config': 'ProtectionGroupEradicationConfig'
@@ -66,7 +66,7 @@ class ProtectionGroupSnapshotPost(object):
         destroyed=None,  # type: bool
         pod=None,  # type: models.FixedReference
         source=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         suffix=None,  # type: str
         time_remaining=None,  # type: int
         eradication_config=None,  # type: models.ProtectionGroupEradicationConfig
@@ -79,7 +79,7 @@ class ProtectionGroupSnapshotPost(object):
             destroyed (bool)
             pod (FixedReference): The pod in which the protection group of the protection group snapshot resides.
             source (FixedReference): The original protection group from which this snapshot was taken.
-            space (Space): Returns provisioned size and physical storage consumption data for each protection group.
+            space (SpaceBase): Returns provisioned size and physical storage consumption data for each protection group.
             suffix (str): The name suffix appended to the protection group name to make up the full protection group snapshot name in the form `PGROUP.SUFFIX`. If `suffix` is not specified, the protection group name is in the form `PGROUP.NNN`, where `NNN` is a unique monotonically increasing number. If multiple protection group snapshots are created at a time, the suffix name is appended to those snapshots.
             time_remaining (int): The amount of time left until the destroyed snapshot is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed snapshot can be recovered by setting `destroyed=false`.
             eradication_config (ProtectionGroupEradicationConfig)

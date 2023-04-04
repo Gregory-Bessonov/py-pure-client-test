@@ -94,7 +94,7 @@ from .resource_performance_no_id_get_response import ResourcePerformanceNoIdGetR
 from .resource_space import ResourceSpace
 from .resource_space_get_response import ResourceSpaceGetResponse
 from .snapshot import Snapshot
-from .space import Space
+from .space_base import SpaceBase
 from .transfer import Transfer
 from .username import Username
 from .username_response import UsernameResponse

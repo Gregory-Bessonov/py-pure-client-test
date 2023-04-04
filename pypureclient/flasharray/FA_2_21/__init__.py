@@ -287,6 +287,7 @@ from .models.software_upgrade_plan import SoftwareUpgradePlan
 from .models.software_version import SoftwareVersion
 from .models.software_versions import SoftwareVersions
 from .models.space import Space
+from .models.space_base import SpaceBase
 from .models.start_end_time import StartEndTime
 from .models.subnet import Subnet
 from .models.subnet_patch import SubnetPatch
@@ -614,6 +615,7 @@ CLASSES_TO_ADD_PROPS = [
     SoftwareVersion,
     SoftwareVersions,
     Space,
+    SpaceBase,
     StartEndTime,
     Subnet,
     SubnetPatch,

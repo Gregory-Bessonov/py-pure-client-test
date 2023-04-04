@@ -37,7 +37,7 @@ class DirectorySnapshot(object):
         'destroyed': 'bool',
         'policy': 'FixedReference',
         'source': 'FixedReference',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'suffix': 'int',
         'time_remaining': 'int'
     }
@@ -67,7 +67,7 @@ class DirectorySnapshot(object):
         destroyed=None,  # type: bool
         policy=None,  # type: models.FixedReference
         source=None,  # type: models.FixedReference
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         suffix=None,  # type: int
         time_remaining=None,  # type: int
     ):
@@ -80,7 +80,7 @@ class DirectorySnapshot(object):
             destroyed (bool): Returns a value of `true` if the snapshot has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed directory snapshot is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed directory snapshot can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the directory snapshot is permanently eradicated and can no longer be recovered.
             policy (FixedReference): The snapshot policy that manages this snapshot, if applicable.
             source (FixedReference): The directory from which this snapshot was taken.
-            space (Space): Displays size and space consumption information.
+            space (SpaceBase): Displays size and space consumption information.
             suffix (int): The suffix that is appended to the `source_name` value and the `client_name` value to generate the full directory snapshot name in the form of `DIR.CLIENT_NAME.SUFFIX` where `DIR` is the managed directory name, `CLIENT_NAME` is the client name, and `SUFFIX` is the suffix. If the suffix is a string, this field returns `null`. See the `name` value for the full snapshot name including the suffix.
             time_remaining (int): The amount of time left until the directory snapshot is permanently eradicated, measured in milliseconds. Before the `time_remaining` period has elapsed, the snapshot can be recovered by setting `destroyed=false` if it is destroyed, by setting `policy=\"\"` if it is managed by a snapshot policy, or by setting `keep_for=\"\"` if it is a manual snapshot.
         """

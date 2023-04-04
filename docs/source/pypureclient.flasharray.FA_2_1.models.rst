@@ -964,10 +964,10 @@ pypureclient.flasharray.FA\_2\_1.models.snapshot\_schedule module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_1.models.space module
-----------------------------------------------------
+pypureclient.flasharray.FA\_2\_1.models.space\_base module
+----------------------------------------------------------
 
-.. automodule:: pypureclient.flasharray.FA_2_1.models.space
+.. automodule:: pypureclient.flasharray.FA_2_1.models.space_base
    :members:
    :undoc-members:
    :show-inheritance:

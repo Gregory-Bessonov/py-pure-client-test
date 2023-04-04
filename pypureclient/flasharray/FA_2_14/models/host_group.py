@@ -34,7 +34,7 @@ class HostGroup(object):
         'connection_count': 'int',
         'host_count': 'int',
         'is_local': 'bool',
-        'space': 'Space'
+        'space': 'SpaceBase'
     }
 
     attribute_map = {
@@ -54,7 +54,7 @@ class HostGroup(object):
         connection_count=None,  # type: int
         host_count=None,  # type: int
         is_local=None,  # type: bool
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
     ):
         """
         Keyword args:
@@ -62,7 +62,7 @@ class HostGroup(object):
             connection_count (int): The number of volumes connected to the host group.
             host_count (int): The number of hosts in the host group.
             is_local (bool): Returns a value of `true` if the host or host group belongs to the current array. Returns a value of `false` if the host or host group belongs to a remote array.
-            space (Space): Displays size and space consumption information.
+            space (SpaceBase): Displays size and space consumption information.
         """
         if name is not None:
             self.name = name

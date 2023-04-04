@@ -164,7 +164,7 @@ from .resource_space_no_id_get_response import ResourceSpaceNoIdGetResponse
 from .retention_policy import RetentionPolicy
 from .snapshot import Snapshot
 from .snapshot_schedule import SnapshotSchedule
-from .space import Space
+from .space_base import SpaceBase
 from .target_protection_group import TargetProtectionGroup
 from .target_protection_group_post_patch import TargetProtectionGroupPostPatch
 from .time_window import TimeWindow

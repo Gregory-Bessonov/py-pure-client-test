@@ -34,7 +34,7 @@ class VolumeGroup(object):
         'name': 'str',
         'destroyed': 'bool',
         'qos': 'Qos',
-        'space': 'Space',
+        'space': 'SpaceBase',
         'time_remaining': 'int',
         'volume_count': 'int'
     }
@@ -58,7 +58,7 @@ class VolumeGroup(object):
         name=None,  # type: str
         destroyed=None,  # type: bool
         qos=None,  # type: models.Qos
-        space=None,  # type: models.Space
+        space=None,  # type: models.SpaceBase
         time_remaining=None,  # type: int
         volume_count=None,  # type: int
     ):
@@ -68,7 +68,7 @@ class VolumeGroup(object):
             name (str): A user-specified name. The name must be locally unique and can be changed.
             destroyed (bool): Returns a value of `true` if the volume group has been destroyed and is pending eradication. The `time_remaining` value displays the amount of time left until the destroyed volume group is permanently eradicated. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`. Once the `time_remaining` period has elapsed, the volume group is permanently eradicated and can no longer be recovered.
             qos (Qos)
-            space (Space)
+            space (SpaceBase)
             time_remaining (int): The amount of time left until the destroyed volume group is permanently eradicated. Measured in milliseconds. Before the `time_remaining` period has elapsed, the destroyed volume group can be recovered by setting `destroyed=false`.
             volume_count (int): The number of volumes in the volume group.
         """

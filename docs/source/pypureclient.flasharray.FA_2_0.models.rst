@@ -404,10 +404,10 @@ pypureclient.flasharray.FA\_2\_0.models.snapshot module
    :undoc-members:
    :show-inheritance:
 
-pypureclient.flasharray.FA\_2\_0.models.space module
-----------------------------------------------------
+pypureclient.flasharray.FA\_2\_0.models.space\_base module
+----------------------------------------------------------
 
-.. automodule:: pypureclient.flasharray.FA_2_0.models.space
+.. automodule:: pypureclient.flasharray.FA_2_0.models.space_base
    :members:
    :undoc-members:
    :show-inheritance:

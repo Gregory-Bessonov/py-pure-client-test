@@ -180,6 +180,7 @@ from .models.software_installation_steps import SoftwareInstallationSteps
 from .models.software_installation_steps_checks import SoftwareInstallationStepsChecks
 from .models.software_installations import SoftwareInstallations
 from .models.space import Space
+from .models.space_base import SpaceBase
 from .models.start_end_time import StartEndTime
 from .models.subnet import Subnet
 from .models.subnet_patch import SubnetPatch
@@ -392,6 +393,7 @@ CLASSES_TO_ADD_PROPS = [
     SoftwareInstallationStepsChecks,
     SoftwareInstallations,
     Space,
+    SpaceBase,
     StartEndTime,
     Subnet,
     SubnetPatch,
