@@ -34,7 +34,7 @@ class ArraySpace(object):
         'name': 'str',
         'capacity': 'int',
         'parity': 'float',
-        'space': 'Space',
+        'space': 'HyperSpace',
         'time': 'int'
     }
 
@@ -56,7 +56,7 @@ class ArraySpace(object):
         name=None,  # type: str
         capacity=None,  # type: int
         parity=None,  # type: float
-        space=None,  # type: models.Space
+        space=None,  # type: models.HyperSpace
         time=None,  # type: int
     ):
         """
@@ -65,7 +65,7 @@ class ArraySpace(object):
             name (str): A locally unique, system-generated name. The name cannot be modified.
             capacity (int): Usable capacity in bytes.
             parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
-            space (Space)
+            space (HyperSpace)
             time (int)
         """
         if id is not None:

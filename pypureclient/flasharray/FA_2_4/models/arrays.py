@@ -40,7 +40,7 @@ class Arrays(object):
         'os': 'str',
         'parity': 'float',
         'scsi_timeout': 'int',
-        'space': 'Space',
+        'space': 'HyperSpace',
         'version': 'str'
     }
 
@@ -74,7 +74,7 @@ class Arrays(object):
         os=None,  # type: str
         parity=None,  # type: float
         scsi_timeout=None,  # type: int
-        space=None,  # type: models.Space
+        space=None,  # type: models.HyperSpace
         version=None,  # type: str
     ):
         """
@@ -89,7 +89,7 @@ class Arrays(object):
             os (str): Valid values are `Purity`, `Purity//FA`, and `Purity//FB`.
             parity (float): A representation of data redundancy on the array. Data redundancy is rebuilt automatically by the system whenever parity is less than 1.0.
             scsi_timeout (int): The SCSI timeout. This value defaults to 60s if it is not specified.
-            space (Space)
+            space (HyperSpace)
             version (str)
         """
         if id is not None:

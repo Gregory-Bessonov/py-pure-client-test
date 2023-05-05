@@ -207,6 +207,7 @@ from .host_port_connectivity import HostPortConnectivity
 from .host_post import HostPost
 from .host_response import HostResponse
 from .host_space import HostSpace
+from .hyper_space import HyperSpace
 from .inline_response400 import InlineResponse400
 from .inline_response401 import InlineResponse401
 from .kmip import Kmip

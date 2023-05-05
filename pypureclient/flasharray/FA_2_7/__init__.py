@@ -98,6 +98,7 @@ from .models.host_performance_by_array import HostPerformanceByArray
 from .models.host_port_connectivity import HostPortConnectivity
 from .models.host_post import HostPost
 from .models.host_space import HostSpace
+from .models.hyper_space import HyperSpace
 from .models.kmip import Kmip
 from .models.kmip_patch import KmipPatch
 from .models.kmip_post import KmipPost
@@ -365,6 +366,7 @@ CLASSES_TO_ADD_PROPS = [
     HostPortConnectivity,
     HostPost,
     HostSpace,
+    HyperSpace,
     Kmip,
     KmipPatch,
     KmipPost,
