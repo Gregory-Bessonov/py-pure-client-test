@@ -1,5 +1,6 @@
 import requests
 
+from ..client_settings import resolve_ssl_validation
 from . import PureError
 
 from . import FA_2_0
@@ -59,7 +60,8 @@ DEFAULT_RETRIES = 5
 
 def Client(target, version=None, id_token=None, private_key_file=None, private_key_password=None,
            username=None, client_id=None, key_id=None, issuer=None, api_token=None,
-           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, user_agent=None):
+           retries=DEFAULT_RETRIES, timeout=DEFAULT_TIMEOUT, ssl_cert=None, verify_ssl=None,
+           user_agent=None):
     """
     Initialize a FlashArray Client.
 
@@ -87,7 +89,7 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
         issuer (str, optional):
             API client's trusted identity issuer on the array.
         api_token (str, optional):
-                API token for the user.
+            API token for the user.
         retries (int, optional):
             The number of times to retry an API call if it fails for a
             non-blocking reason. Defaults to 5.
@@ -96,13 +98,18 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
             (connect and read) times. Defaults to 15.0 total.
         ssl_cert (str, optional):
             SSL certificate to use. Defaults to None.
+        verify_ssl (bool | str, optional):
+            Controls SSL certificate validation.
+            `True` specifies that the server validation uses default trust anchors;
+            `False` switches certificate validation off, **not safe!**;
+            It also accepts string value for a path to directory with certificates.
         user_agent (str, optional):
             User-Agent request header to use.
 
     Raises:
         PureError: If it could not create an ID or access token
     """
-    array_versions = get_array_versions(target)
+    array_versions = get_array_versions(target, verify_ssl)
     if version is not None:
         version = validate_version(array_versions, version)
     else:
@@ -112,12 +119,12 @@ def Client(target, version=None, id_token=None, private_key_file=None, private_k
     client = fa_module.Client(target=target, id_token=id_token, private_key_file=private_key_file,
                               private_key_password=private_key_password, username=username, client_id=client_id,
                               key_id=key_id, issuer=issuer, api_token=api_token, retries=retries, timeout=timeout,
-                              ssl_cert=ssl_cert, user_agent=user_agent)
+                              ssl_cert=ssl_cert, verify_ssl=resolve_ssl_validation(verify_ssl), user_agent=user_agent)
     return client
 
-def get_array_versions(target):
+def get_array_versions(target, verify_ssl=None):
     url = 'https://{}/api/api_version'.format(target)
-    response = requests.get(url, verify=False)
+    response = requests.get(url, verify=resolve_ssl_validation(verify_ssl))
     if response.status_code == requests.codes.ok:
         return response.json()['version']
     else:
